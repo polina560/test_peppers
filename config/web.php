@@ -21,6 +21,7 @@ $config = [
         ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+            'baseUrl' => '',
             'cookieValidationKey' => 'ERT-M6mEiYsD0aeze11JlIKJ-EsM9lAL',
         ],
         'cache' => [
@@ -49,14 +50,18 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'page/<page\d+>' => 'post/index',
+                '/' => 'post/index',
+                'post/<id:\d+>' => 'post/view',
+                'category/<alias:[0-9a-zA-Z-]+>' => 'category/view'
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];
