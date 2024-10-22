@@ -12,7 +12,7 @@ class m241022_084809_int_create_at extends Migration
      */
     public function safeUp()
     {
-        $this->alterColumn('new_post', 'created_at', $this->integer(11)->notNull());
+        $this->alterColumn('post', 'created_at', $this->integer(11)->notNull());
 
     }
 
@@ -21,7 +21,7 @@ class m241022_084809_int_create_at extends Migration
      */
     public function safeDown()
     {
-        $this->alterColumn('new_post', 'created_at', $this->dateTime()->notNull());
+        $this->alterColumn('post', 'created_at', $this->dateTime()->notNull());
 
     }
 

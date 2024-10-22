@@ -12,14 +12,17 @@ class m241022_072039_create_news_table extends Migration
      */
     public function safeUp()
     {
-        $this->createTable('new_category', [
+        $this->dropTable('new_category');
+        $this->dropTable('new_post');
+
+        $this->createTable('category', [
             'id' => 'int NOT NULL AUTO_INCREMENT',
             'title' => 'varchar(255) NOT NULL',
             'alias' => 'varchar(255) NOT NULL',
             'PRIMARY KEY(id)'
         ]);
 
-        $this->createTable('new_post', [
+        $this->createTable('post', [
             'id' => 'int unsigned NOT NULL AUTO_INCREMENT ',
             'category_id' => 'int unsigned NOT NULL',
             'title' => $this->string(255,  'utf8 COLLATE utf8_unicode_ci')->notNull(),
@@ -39,7 +42,7 @@ class m241022_072039_create_news_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('new_category');
-        $this->dropTable('new_post');
+        $this->dropTable('category');
+        $this->dropTable('post');
     }
 }
