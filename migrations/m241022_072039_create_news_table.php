@@ -13,9 +13,10 @@ class m241022_072039_create_news_table extends Migration
     public function safeUp()
     {
         $this->createTable('new_category', [
-            'id' => 'int NOT NULL AUTO_INCREMENT ',
-            'title' => $this->string(255, 'utf8 COLLATE utf8_unicode_ci')->notNull(),
-            'alias' => $this->string(255,  'utf8 COLLATE utf8_unicode_ci')->notNull(),
+            'id' => 'int NOT NULL AUTO_INCREMENT',
+            'title' => 'varchar(255) NOT NULL',
+            'alias' => 'varchar(255) NOT NULL',
+            'PRIMARY KEY(id)'
         ]);
 
         $this->createTable('new_post', [
@@ -25,9 +26,10 @@ class m241022_072039_create_news_table extends Migration
             'excerpt' => $this->string(255,  'utf8 COLLATE utf8_unicode_ci')->notNull(),
             'content' => $this->text('utf8 COLLATE utf8_unicode_ci')->notNull(),
             'img' => $this->string(255,  'utf8 COLLATE utf8_unicode_ci'),
-            'created_at' => $this->dateTime(),
+            'created_at' => $this->dateTime()->notNull(),
             'keywords' => $this->string(255,  'utf8 COLLATE utf8_unicode_ci'),
-            'description' => $this->string(255,  'utf8 COLLATE utf8_unicode_ci')
+            'description' => $this->string(255,  'utf8 COLLATE utf8_unicode_ci'),
+            'PRIMARY KEY(id)'
         ]);
 //
     }
