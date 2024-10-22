@@ -20,6 +20,11 @@ class PostController extends Controller
 
     public function actionView($id)
     {
-        var_dump($id);
+        $posts = Post::find()->all();
+        return $this->render('content',  compact('posts'));
+
+
     }
+
+
 }

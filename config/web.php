@@ -55,6 +55,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+
                 'page/<page\d+>' => 'post/index',
                 '/' => 'post/index',
                 'post/<id:\d+>' => 'post/view',
