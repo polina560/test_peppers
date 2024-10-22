@@ -31,7 +31,7 @@ class m241022_072039_create_news_table extends Migration
             'description' => $this->string(255,  'utf8 COLLATE utf8_unicode_ci'),
             'PRIMARY KEY(id)'
         ]);
-//
+
     }
 
     /**
